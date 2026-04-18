@@ -50,9 +50,9 @@ form.addEventListener('submit', async (event) => {
 
     form.reset();
     updateCounter();
-    setStatus('Сообщение успешно отправлено на почту.', 'success');
+    setStatus('Сообщение успешно отправлено. Напишите мне в чат FunPay , отправил .', 'success');
   } catch (error) {
-    setStatus('Не удалось отправить. Проверь Formspree ID и настройки формы.', 'error');
+    setStatus('Не удалось отправить.', 'error');
   } finally {
     submitBtn.disabled = false;
   }
