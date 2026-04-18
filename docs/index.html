@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Космическая отправка сообщения</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="nebula nebula-1"></div>
+  <div class="nebula nebula-2"></div>
+
+  <main class="page">
+    <section class="hero-card">
+      <div class="badge">GitHub Pages + Email</div>
+      <h1>Отправка сообщения</h1>
+      <p class="subtitle">
+        Космическая форма с полем <b>Имя</b>, большим текстовым блоком до <b>9000 символов</b>
+        и отправкой прямо тебе на почту.
+      </p>
+
+      <form id="messageForm" class="form" action="https://formspree.io/f/PASTE_YOUR_FORMSPREE_ID" method="POST">
+        <div class="field">
+          <label for="name">Имя</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            maxlength="120"
+            placeholder="Введите имя"
+            required
+          />
+        </div>
+
+        <div class="field">
+          <label for="email">Почта отправителя (необязательно)</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            maxlength="180"
+            placeholder="example@mail.com"
+          />
+        </div>
+
+        <div class="field">
+          <label for="message">Сообщение</label>
+          <textarea
+            id="message"
+            name="message"
+            maxlength="9000"
+            placeholder="Введите большой текст до 9000 символов"
+            required
+          ></textarea>
+          <div class="meta-row">
+            <span class="hint">Максимум 9000 символов</span>
+            <span id="counter" class="counter">0 / 9000</span>
+          </div>
+        </div>
+
+        <input type="hidden" name="_subject" value="Новое сообщение с космического сайта" />
+        <input type="hidden" name="page" value="github-pages-space-form" />
+
+        <button id="submitBtn" type="submit">Отправить</button>
+        <p id="status" class="status" aria-live="polite"></p>
+      </form>
+
+      <div class="note-box">
+        <h2>Что нужно сделать один раз</h2>
+        <ol>
+          <li>Создай форму на Formspree.</li>
+          <li>Скопируй свой адрес вида <code>https://formspree.io/f/xxxxx</code>.</li>
+          <li>Вставь его в файл <code>docs/index.html</code> вместо <code>PASTE_YOUR_FORMSPREE_ID</code>.</li>
+          <li>Загрузи папку <code>docs</code> в GitHub и включи GitHub Pages.</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
